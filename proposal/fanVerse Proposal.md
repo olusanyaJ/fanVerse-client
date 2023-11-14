@@ -91,9 +91,8 @@ XXX
 User Data:
 
 - Username, email, password, favorite teams, players.
-  Fan
 
-Clubs Data:
+Fan Clubs Data:
 - Club name, description, members.
 
 Discussion Data:
