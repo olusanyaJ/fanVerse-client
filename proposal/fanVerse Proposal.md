@@ -49,7 +49,7 @@ Notifications:
 
 Frontend:
 
-- React (or other preferred frontend framework).
+- React
 - HTML, CSS, JavaScript.
 
 Backend:
