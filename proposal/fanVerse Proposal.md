@@ -29,20 +29,6 @@ Live Match Updates:
 - Real-time updates on live football and tennis matches.
 - Display match schedules for upcoming games and past results.
 
-Fan Clubs:
-
-- Join existing fan clubs.
-- Create new fan clubs and invite others to join.
-
-Interactive Discussions:
-
-- Discussion forums for live match conversations.
-- Comment, like, and share posts within the forums.
-
-Notifications:
-
-- Receive notifications for new discussions, match updates, and club activities.
-
 ## Implementation
 
 ### Tech Stack
@@ -76,11 +62,11 @@ API Integration:
 ### Sitemap
 
 1. Home
-2. Live Matches
-3. Fan Clubs
-4. Discussions
-5. Notifications
-6. User Profile
+   - Live Matches
+      - Match Details
+  - User Profile
+      - Edit Profile
+      - User Settings
 
 ### Mockups
 
@@ -90,13 +76,7 @@ XXX
 
 User Data:
 
-- Username, email, password, favorite teams, players.
-
-Fan Clubs Data:
-- Club name, description, members.
-
-Discussion Data:
-- Posts, comments, likes.
+- Username, email, password, favorite teams, players, Posts, comments, likes.
 
 Match Data:
 - Scores, highlights, statistics, schedules.
@@ -104,8 +84,6 @@ Match Data:
 ### Endpoints
 
 - `/api/user` (POST, GET, PUT, DELETE)
-- `/api/fanclub` (POST, GET, PUT, DELETE)
-- `/api/discussion` (POST, GET, PUT, DELETE)
 - `/api/match` (GET)
 
 ### Auth
@@ -119,20 +97,46 @@ Backend Development (15th Nov - 25th Nov):
 
 - Week 1 (15th Nov - 17th Nov):
 
-  - Setup database and server.
-  - Implement user authentication.
+  - Set up the project repository.
+  - Initialize the backend structure (folders, files).
+  - Install and configure Node.js and Express.js.
+  - Implement user registration (POST /api/user).
 
 - Week 2 (18th Nov - 25th Nov):
-  - Integrate Football and Tennis APIs for match data.
-  - Implement fan club and discussion features.
+  - Integrate OAuth for user authentication.
+  - Integrate Football Data API for live match updates.
+  - Design and implement match data model in the database.
+  - Implement match schedule retrieval (GET /api/match).
+  - Implement user profile retrieval (GET /api/user/:id).
+  - Create and test user profile update (PUT /api/user/:id).
+  - Handle user account deletion (DELETE /api/user/:id).
 
 Frontend Development (18th Nov - 25th Nov):
 
 - Week 3 (18th Nov - 25th Nov):
-  - Design and implement user interfaces.
-  - Integrate real-time updates and notifications.
+  - Set up the frontend project using React.
+  - Create basic UI components for login and registration.
+  - Design and implement user profile page.
+  - Integrate OAuth login components.
+  - Design and implement live match updates section.
+  - Integrate match schedule display.
+  - Conduct thorough testing and debugging..
 
 ## Nice-to-haves
+
+Fan Clubs:
+
+- Join existing fan clubs.
+- Create new fan clubs and invite others to join.
+
+Interactive Discussions:
+
+- Discussion forums for live match conversations.
+- Comment, like, and share posts within the forums.
+
+Notifications:
+
+- Receive notifications for new discussions, match updates, and club activities.
 
 Advanced User Profiles:
 
