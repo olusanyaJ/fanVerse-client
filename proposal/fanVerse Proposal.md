@@ -138,6 +138,10 @@ Notifications:
 
 - Receive notifications for new discussions, match updates, and club activities.
 
+OAuth:
+
+- Implement OAuth login with Facebook, Google and Apple.
+
 Advanced User Profiles:
 
 - Additional user details, profile customization.
