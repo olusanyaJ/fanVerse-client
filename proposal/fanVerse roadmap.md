@@ -28,8 +28,8 @@
 #### Week 2 (November 18th - 25th):
 
 **Day 4 (November 18th):**
-- Integrate OAuth for user authentication.
-- Set up and test OAuth login with Google and Facebook.
+- Integrate Auth for user authentication.
+- Set up and test Auth login.
 
 **Day 5 (November 19th):**
 - Integrate Football Data API for live match updates.
@@ -58,7 +58,7 @@
 
 **Day 5 (November 19th):**
 - Design and implement user profile page.
-- Integrate OAuth login components.
+- Integrate Auth login components.
 
 **Day 6 (November 20th):**
 - Design and implement live match updates section.
