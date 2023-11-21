@@ -17,7 +17,7 @@ const SignupPage = () => {
         password: event.target.password.value,
       });
 
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.error(error);
       //   setError(error.response.data);

@@ -3,6 +3,7 @@ import "./App.scss";
 import GetStarted from "./pages/GetStarted/GetStarted";
 import Onboarding from "./pages/OnboardingPage/Onboarding";
 import SignupPage from "./pages/SignupPage/SignupPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<Onboarding />} />
           <Route path="/get-started" element={<GetStarted />} />
           <Route path="/sign-up" element={<SignupPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </div>
