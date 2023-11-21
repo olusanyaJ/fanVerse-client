@@ -15,18 +15,19 @@
   &__wrapper {
     margin: 0 auto;
     margin-top: 1.5rem;
-    width: 14.375rem;
-    height: 16.125rem;
+    width: 15.875rem;
+    height: 19rem;
     border-radius: 1.5rem 1.5rem 0 0;
     background: $button-color;
   }
 
   &__image {
     text-align: center;
-    padding-top: 6rem;
+    padding-top: 8rem;
   }
   &__content {
     background-color: $bg-color;
+    padding: 1rem 0;
   }
   &__inner {
     margin: 0 1.5rem;
@@ -66,7 +67,7 @@
     }
   }
   &__btn {
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     @include get-started-button;
   }
 }
