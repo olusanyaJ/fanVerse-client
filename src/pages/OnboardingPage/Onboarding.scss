@@ -11,12 +11,11 @@
   &__text {
     @include skip-button;
   }
-
   &__wrapper {
     margin: 0 auto;
     margin-top: 1.5rem;
     width: 15.875rem;
-    height: 46vh;
+    height: 45vh;
     border-radius: 1.5rem 1.5rem 0 0;
     background: $button-color;
   }
@@ -28,7 +27,7 @@
   &__content {
     background-color: $bg-color;
     padding: 1rem 0;
-    height: 42.5vh;
+    height: 40vh;
   }
   &__inner {
     margin: 0 1.5rem;
@@ -68,7 +67,7 @@
     }
   }
   &__btn {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     @include get-started-button;
   }
 }
