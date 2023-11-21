@@ -1,0 +1,31 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid $secondary-color;
+    background-color: $bg-color-upper;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: $secondary-color;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.65rem;
+    letter-spacing: 0.025rem;
+  }
+  &__input::placeholder {
+    font-family: Manrope;
+    color: $secondary-color;
+  }
+}
