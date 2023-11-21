@@ -20,9 +20,9 @@ const Onboarding = () => {
             share insights, and stay updated on all the latest buzz.
           </p>
           <div>
-            <span class="onboarding__slider"></span>
-            <span class="onboarding__slider"></span>
-            <span class="onboarding__slider onboarding__slider--active"></span>
+            <span className="onboarding__slider"></span>
+            <span className="onboarding__slider"></span>
+            <span className="onboarding__slider onboarding__slider--active"></span>
           </div>
           <Link to="/get-started" className="onboarding__btn-link">
             <p className="onboarding__btn">Get Started</p>
