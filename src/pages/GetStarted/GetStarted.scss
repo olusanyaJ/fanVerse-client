@@ -1,0 +1,110 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.get-started {
+  &__wrapper {
+    max-width: 100vw;
+    height: 19.75rem;
+    overflow: hidden;
+    background-color: $get-started-bg-color;
+  }
+  &__boxes {
+    position: relative;
+    width: 100%;
+    height: 19.75rem;
+  }
+  &__box1,
+  &__box2,
+  &__box3 {
+    position: absolute;
+    width: 21.72613rem;
+    height: 19.75rem;
+    transform: rotate(-6.125deg);
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+  }
+  &__box1 {
+    top: 4rem;
+    left: 6rem;
+    opacity: 0.3;
+    background: $button-text-color;
+    backdrop-filter: blur(2px);
+  }
+
+  &__box2 {
+    top: 3rem;
+    left: 7rem;
+    opacity: 0.6;
+    background: $button-text-color;
+    backdrop-filter: blur(2px);
+  }
+
+  &__box3 {
+    top: 2rem;
+    left: 8rem;
+    background: $button-color;
+    box-shadow: -8px 16px 50px 0px rgba(15, 23, 42, 0.04);
+  }
+  &__content {
+    background-color: $bg-color;
+    padding: 1rem 0;
+  }
+  &__inner {
+    margin: 0 1.5rem;
+    padding: 0.75rem 0;
+  }
+  &__title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.25rem;
+  }
+  &__subtitle {
+    text-align: center;
+    color: $secondary-color;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4875rem;
+    letter-spacing: 0.01875rem;
+    margin-bottom: 1.5rem;
+  }
+  &__btn {
+    @include get-started-button;
+    margin-bottom: 1rem;
+  }
+  &__btn-outline {
+    @include get-started-button-outline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  &__icon {
+    margin-right: 0.5rem;
+  }
+  &__footer {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  &__footer-text {
+    color: $secondary-color;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4875rem;
+    letter-spacing: 0.01875rem;
+  }
+
+  &__footer-link-text {
+    color: $blue-button-color;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 170%;
+    letter-spacing: 0.01875rem;
+  }
+}

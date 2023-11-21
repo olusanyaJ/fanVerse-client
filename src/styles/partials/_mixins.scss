@@ -37,6 +37,20 @@
   letter-spacing: 0.025rem;
 }
 
+@mixin get-started-button-outline {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  color: $button-text-color;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.65rem;
+  letter-spacing: 0.025rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--greyscale-700, #334155);
+}
+
 @mixin page-header {
   font-size: 1.5rem;
   line-height: 2rem;
