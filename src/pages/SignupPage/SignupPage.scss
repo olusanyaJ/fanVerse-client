@@ -44,6 +44,8 @@
     color: $blue-button-color;
   }
   &__btn-signup {
+    width: 100%;
+    border: none;
     margin-top: 1rem;
     @include get-started-button;
   }

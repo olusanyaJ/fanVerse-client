@@ -12,6 +12,7 @@ function Input({ label, name, type }) {
         name={name}
         className="field__input"
         placeholder={name}
+        autoComplete="given-name"
       />
     </div>
   );
