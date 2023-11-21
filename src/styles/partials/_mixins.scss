@@ -1,0 +1,56 @@
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin page-header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  @include tablet {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+  }
+}
+
+@mixin section-header {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+@mixin subheader {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+@mixin body-copy {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+@mixin labels-and-buttons {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  @include tablet {
+    font-size: 0.75rem;
+  }
+}

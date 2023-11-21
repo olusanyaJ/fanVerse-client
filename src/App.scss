@@ -1,3 +1,10 @@
-.App {
-  text-align: center;
+@use "./styles/partials/reset";
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
+body {
+  color: $button-color;
+  margin: 0;
+  font-family: "Avenir Next LT Pro", sans-serif;
 }
