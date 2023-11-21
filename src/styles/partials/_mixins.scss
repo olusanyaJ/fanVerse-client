@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;
@@ -8,6 +10,31 @@
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
   }
+}
+
+@mixin skip-button {
+  color: $blue-button-color;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.275rem;
+  letter-spacing: 0.0125rem;
+  border-radius: 0.5rem;
+  border: 1px solid $blue-button-color;
+  padding: 0.5rem 1rem;
+}
+
+@mixin get-started-button {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  background: $button-color;
+  color: $button-text-color;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.65rem;
+  letter-spacing: 0.025rem;
 }
 
 @mixin page-header {
