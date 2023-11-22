@@ -4,24 +4,27 @@ import googleIcon from "../../assets/icons/Google.svg";
 import appleIcon from "../../assets/icons/Apple.svg";
 import Input from "../../components/Input/Input";
 import axios from "axios";
+import { useState } from "react";
 
 const SignupPage = () => {
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      await axios.post("http://localhost:8000/user-auth/signup", {
-        username: event.target.username.value,
-        email: event.target.email.value,
-        password: event.target.password.value,
-      });
+    console.log(event);
+    // try {
+    //   await axios.post("http://localhost:8000/user-auth/signup", {
+    //     username: event.target.username.value,
+    //     email: event.target.email.value,
+    //     password: event.target.password.value,
+    //   });
 
-      navigate("/login");
-    } catch (error) {
-      console.error(error);
-      //   setError(error.response.data);
-    }
+    //   navigate("/login");
+    // } catch (error) {
+    //   console.error(error);
+    //   setError(error.response.data);
+    // }
   };
 
   return (
@@ -32,8 +35,10 @@ const SignupPage = () => {
       </p>
       <form className="signup" onSubmit={handleSubmit}>
         <Input type="text" name="username" label="Username" />
-        <Input type="text" name="email" label="Email" />
+        <Input type="text" name="email" label="Email" id="email" required />
         <Input type="password" name="password" label="Password" />
+
+        {error && <div className="signup__message">{error}</div>}
 
         <button className="signup-page__btn-signup">Sign Up</button>
       </form>

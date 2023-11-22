@@ -3,7 +3,7 @@ import "./Onboarding.scss";
 
 const Onboarding = () => {
   return (
-    <>
+    <main className="welcome">
       <div className="onboarding">
         <Link to="/get-started" className="onboarding__link">
           <p className="onboarding__text">Skip</p>
@@ -29,7 +29,7 @@ const Onboarding = () => {
           </Link>
         </div>
       </div>
-    </>
+    </main>
   );
 };
 
