@@ -1,14 +1,14 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./SignupPage.scss";
 import googleIcon from "../../assets/icons/Google.svg";
 import appleIcon from "../../assets/icons/Apple.svg";
 import Input from "../../components/Input/Input";
-import axios from "axios";
-import { useState } from "react";
+// import axios from "axios";
+// import { useState } from "react";
 
 const SignupPage = () => {
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
+  // const [error, setError] = useState(null);
+  // const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,7 +38,7 @@ const SignupPage = () => {
         <Input type="text" name="email" label="Email" id="email" required />
         <Input type="password" name="password" label="Password" />
 
-        {error && <div className="signup__message">{error}</div>}
+        {/* {error && <div className="signup__message">{error}</div>} */}
 
         <button className="signup-page__btn-signup">Sign Up</button>
       </form>

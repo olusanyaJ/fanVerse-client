@@ -1,29 +1,38 @@
 import Input from "../../components/Input/Input";
 import "./LoginPage.scss";
-
 import { Link, useNavigate } from "react-router-dom";
 import googleIcon from "../../assets/icons/Google.svg";
 import appleIcon from "../../assets/icons/Apple.svg";
 import axios from "axios";
+// import { useState } from "react";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  // const [error, setError] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     // console.log(event.target);
-    console.log("working");
-    navigate("/");
-    // try {
-    //   await axios.post("http://localhost:8000/user-auth/login", {
-    //     username: event.target.username.value,
-    //     password: event.target.password.value,
-    //   });
-    //   navigate("/");
-    // } catch (error) {
-    //   console.error(error);
-    //   //   setError(error.response.data);
-    // }
+    // console.log("working");
+    // console.log(event.target.username.value);
+    // console.log(event.target.password.value);
+
+    // navigate("/");
+    // console.log(event.target.);
+    try {
+      const inputData = await axios.post(
+        "http://localhost:8000/user-auth/login",
+        {
+          username: event.target.username.value,
+          password: event.target.password.value,
+        }
+      );
+      sessionStorage.setItem("token", inputData.data.token);
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+      //   setError(error.response.data);
+    }
   };
 
   return (
@@ -33,8 +42,8 @@ const LoginPage = () => {
         Enter your password and Get back in!
       </p>
       <form className="login" onSubmit={handleSubmit}>
-        <Input type="text" name="Username" label="Username" />
-        <Input type="password" name="Password" label="Password" />
+        <Input type="text" name="username" label="Username" />
+        <Input type="password" name="password" label="Password" />
 
         <p className="login-page__condition">
           <Link to="/" className="signup-page__agree">
