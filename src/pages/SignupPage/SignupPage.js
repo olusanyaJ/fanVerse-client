@@ -10,20 +10,39 @@ const SignupPage = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const [tennisChecked, setTennisChecked] = useState(false);
+  const [footballChecked, setFootballChecked] = useState(false);
+
+  const handleTennisChange = () => {
+    setTennisChecked(!tennisChecked);
+  };
+
+  const handleFootballChange = () => {
+    setFootballChecked(!footballChecked);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      await axios.post("http://localhost:8000/user-auth/signup", {
-        username: event.target.username.value,
-        email: event.target.email.value,
-        password: event.target.password.value,
-      });
+    // console.log(event.target.tennis.value);
+    console.log(event.target.username.value);
+    console.log(event.target.email.value);
+    console.log(event.target.password.value);
+    console.log(event.target.tennis.value);
+    console.log(event.target.football.value);
+    // try {
+    //   await axios.post("http://localhost:8000/user-auth/signup", {
+    //     username: event.target.username.value,
+    //     email: event.target.email.value,
+    //     password: event.target.password.value,
+    //     tennis: event.target.tennis.value,
+    //     football: event.football.tennis.value,
+    //   });
 
-      navigate("/login");
-    } catch (error) {
-      console.error(error);
-      setError(error.response.data);
-    }
+    //   navigate("/login");
+    // } catch (error) {
+    //   console.error(error);
+    //   setError(error.response.data);
+    // }
   };
 
   return (
@@ -36,6 +55,35 @@ const SignupPage = () => {
         <Input type="text" name="username" label="Username" />
         <Input type="text" name="email" label="Email" id="email" required />
         <Input type="password" name="password" label="Password" />
+
+        <label>
+          <p className="signup-page__choice">
+            Tap your favourite sport (or both) and choose your preferred
+            leagues. We are curious!
+          </p>
+          <div className="topping">
+            <input
+              type="checkbox"
+              id="sports_type"
+              name="tennis"
+              // value="tennis"
+              checked={tennisChecked}
+              onChange={handleTennisChange}
+            />
+            Tennis
+          </div>
+          <div className="topping">
+            <input
+              type="checkbox"
+              id="sports_type"
+              name="football"
+              // value="football"
+              checked={footballChecked}
+              onChange={handleFootballChange}
+            />
+            Football
+          </div>
+        </label>
 
         {error && <div className="signup__message">{error}</div>}
 
