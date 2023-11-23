@@ -7,7 +7,7 @@ import axios from "axios";
 import { useState } from "react";
 
 const SignupPage = () => {
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const [tennisChecked, setTennisChecked] = useState(false);
@@ -23,26 +23,21 @@ const SignupPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // console.log(event.target.tennis.value);
-    console.log(event.target.username.value);
-    console.log(event.target.email.value);
-    console.log(event.target.password.value);
-    console.log(event.target.tennis.value);
-    console.log(event.target.football.value);
-    // try {
-    //   await axios.post("http://localhost:8000/user-auth/signup", {
-    //     username: event.target.username.value,
-    //     email: event.target.email.value,
-    //     password: event.target.password.value,
-    //     tennis: event.target.tennis.value,
-    //     football: event.football.tennis.value,
-    //   });
 
-    //   navigate("/login");
-    // } catch (error) {
-    //   console.error(error);
-    //   setError(error.response.data);
-    // }
+    try {
+      await axios.post("http://localhost:8000/user-auth/signup", {
+        username: event.target.username.value,
+        email: event.target.email.value,
+        password: event.target.password.value,
+        tennis: tennisChecked,
+        football: footballChecked,
+      });
+
+      navigate("/login");
+    } catch (error) {
+      console.error(error);
+      // setError(error.response);
+    }
   };
 
   return (
@@ -61,23 +56,23 @@ const SignupPage = () => {
             Tap your favourite sport (or both) and choose your preferred
             leagues. We are curious!
           </p>
-          <div className="topping">
+          <div className="">
             <input
               type="checkbox"
-              id="sports_type"
+              id="tennis"
               name="tennis"
-              // value="tennis"
+              value="tennis"
               checked={tennisChecked}
               onChange={handleTennisChange}
             />
             Tennis
           </div>
-          <div className="topping">
+          <div className="">
             <input
               type="checkbox"
-              id="sports_type"
+              id="football"
               name="football"
-              // value="football"
+              value="football"
               checked={footballChecked}
               onChange={handleFootballChange}
             />
@@ -85,7 +80,7 @@ const SignupPage = () => {
           </div>
         </label>
 
-        {error && <div className="signup__message">{error}</div>}
+        {/* {error && <div className="signup__message">{error}</div>} */}
 
         <button className="signup-page__btn-signup">Sign Up</button>
       </form>

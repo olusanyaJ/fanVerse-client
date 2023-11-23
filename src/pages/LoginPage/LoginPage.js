@@ -12,13 +12,6 @@ const LoginPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // console.log(event.target);
-    // console.log("working");
-    // console.log(event.target.username.value);
-    // console.log(event.target.password.value);
-
-    // navigate("/");
-    // console.log(event.target.);
     try {
       const inputData = await axios.post(
         "http://localhost:8000/user-auth/login",
@@ -28,10 +21,10 @@ const LoginPage = () => {
         }
       );
       sessionStorage.setItem("token", inputData.data.token);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       console.error(error);
-      //   setError(error.response.data);
+      // setError(error.response.data);
     }
   };
 
