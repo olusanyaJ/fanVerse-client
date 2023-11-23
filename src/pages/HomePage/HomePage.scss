@@ -1,0 +1,18 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.post-test {
+  margin: 1rem 0;
+  border: 1px solid red;
+}
+
+.main {
+  height: 100vh;
+  padding: 0 1.5rem;
+  //   border: 1px solid blue;
+}
+.post_test {
+  padding-top: 3.8225rem;
+}
