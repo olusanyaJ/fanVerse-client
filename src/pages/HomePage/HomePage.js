@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Nav from "../../components/Nav/Nav";
+import Verse from "../../components/Verse/Verse";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -81,23 +82,26 @@ const HomePage = () => {
   return (
     <main className="main">
       <Header />
-      {/* <div className="post_test">
-        <div>
-          This is the home feed of {data.username} and i am a {sportsType} Fan
-        </div>
-        <p>This is the content:</p>
-        {posts.map((post) => {
-          const postContent = post.content;
-          return (
-            <>
-              <p key={post.id} className="post-test">
-                {postContent}
-              </p>
-            </>
-          );
-        })}
-        <button onClick={logout}>Log Out</button>
-      </div> */}
+      <div className="main__container">
+        <Verse />
+        {/* <div className="post_test">
+          <div>
+            This is the home feed of {data.username} and i am a {sportsType} Fan
+          </div>
+          <p>This is the content:</p>
+          {posts.map((post) => {
+            const postContent = post.content;
+            return (
+              <>
+                <p key={post.id} className="post-test">
+                  {postContent}
+                </p>
+              </>
+            );
+          })}
+          <button onClick={logout}>Log Out</button>
+        </div> */}
+      </div>
       <Nav />
     </main>
   );
