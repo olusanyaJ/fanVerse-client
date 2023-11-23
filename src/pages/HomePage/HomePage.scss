@@ -1,0 +1,26 @@
+.post-test {
+  margin: 1rem 0;
+}
+
+.main {
+  height: 100vh;
+  padding: 0 1.5rem;
+  border: 1px solid blue;
+}
+.header {
+  border: 1px solid red;
+  padding: 0.88rem 0;
+}
+.nav {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+.img {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 1.75rem;
+  background: lightgray 50% / cover no-repeat;
+}
