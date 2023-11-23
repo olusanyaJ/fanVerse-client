@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import "./HomePage.scss";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/logo/Group 3864.svg";
-import messageIcon from "../../assets/icons/Frame.svg";
-import img from "../../assets/images/free-photo.jpeg";
+import Header from "../../components/Header/Header";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -96,27 +94,7 @@ const HomePage = () => {
         );
       })}
       <button onClick={logout}>Log Out</button> */}
-      <header className="header">
-        <nav>
-          <ul className="nav">
-            <li>
-              <Link to="/nice-to-have" className="img-link">
-                <img src={img} alt="google icon" className="img" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/home" className="img-logo-link">
-                <img src={logo} alt="google icon" className="img-logo" />
-              </Link>
-            </li>
-            <li>
-              <Link to="/nice-to-have" className="img-msg-link">
-                <img src={messageIcon} alt="google icon" className="img-msg" />
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
     </main>
   );
 };
