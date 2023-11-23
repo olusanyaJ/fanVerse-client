@@ -80,22 +80,24 @@ const HomePage = () => {
 
   return (
     <main className="main">
-      {/* <div>
-        This is the home feed of {data.username} and i am a {sportsType} Fan
-      </div>
-      <p>This is the content:</p>
-      {posts.map((post) => {
-        const postContent = post.content;
-        return (
-          <>
-            <p key={post.id} className="post-test">
-              {postContent}
-            </p>
-          </>
-        );
-      })}
-      <button onClick={logout}>Log Out</button> */}
       <Header />
+      {/* <div className="post_test">
+        <div>
+          This is the home feed of {data.username} and i am a {sportsType} Fan
+        </div>
+        <p>This is the content:</p>
+        {posts.map((post) => {
+          const postContent = post.content;
+          return (
+            <>
+              <p key={post.id} className="post-test">
+                {postContent}
+              </p>
+            </>
+          );
+        })}
+        <button onClick={logout}>Log Out</button>
+      </div> */}
       <Nav />
     </main>
   );
