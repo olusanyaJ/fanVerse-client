@@ -56,27 +56,31 @@ const SignupPage = () => {
             Tap your favourite sport (or both) and choose your preferred
             leagues. We are curious!
           </p>
-          <div className="">
-            <input
-              type="checkbox"
-              id="tennis"
-              name="tennis"
-              value="tennis"
-              checked={tennisChecked}
-              onChange={handleTennisChange}
-            />
-            Tennis
-          </div>
-          <div className="">
-            <input
-              type="checkbox"
-              id="football"
-              name="football"
-              value="football"
-              checked={footballChecked}
-              onChange={handleFootballChange}
-            />
-            Football
+          <div className="signup-page__sport">
+            <div className="signup-page__inner">
+              Tennis
+              <input
+                className="signup-page__input"
+                type="checkbox"
+                id="tennis"
+                name="tennis"
+                value="tennis"
+                checked={tennisChecked}
+                onChange={handleTennisChange}
+              />
+            </div>
+            <div className="signup-page__inner">
+              Football
+              <input
+                className="signup-page__input"
+                type="checkbox"
+                id="football"
+                name="football"
+                value="football"
+                checked={footballChecked}
+                onChange={handleFootballChange}
+              />
+            </div>
           </div>
         </label>
 
