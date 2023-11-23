@@ -3,6 +3,7 @@ import "./HomePage.scss";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import Nav from "../../components/Nav/Nav";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -95,6 +96,7 @@ const HomePage = () => {
       })}
       <button onClick={logout}>Log Out</button> */}
       <Header />
+      <Nav />
     </main>
   );
 };

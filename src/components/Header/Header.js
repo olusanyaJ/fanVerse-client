@@ -11,17 +11,17 @@ const Header = () => {
         <ul className="nav__list">
           <li className="nav__item">
             <Link to="/nice-to-have" className="nav__link">
-              <img src={img} alt="google icon" className="nav__img" />
+              <img src={img} alt="user avatar" className="nav__img" />
             </Link>
           </li>
           <li className="nav__item">
             <Link to="/home" className="nav__link">
-              <img src={logo} alt="google icon" className="img-logo" />
+              <img src={logo} alt="fanverse logo" className="img-logo" />
             </Link>
           </li>
           <li className="nav__item">
             <Link to="/nice-to-have" className="nav__link">
-              <img src={messageIcon} alt="google icon" className="img-msg" />
+              <img src={messageIcon} alt="messages icon" className="img-msg" />
             </Link>
           </li>
         </ul>

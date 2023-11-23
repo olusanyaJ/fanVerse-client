@@ -1,0 +1,11 @@
+.footer {
+  //   border: 1px solid yellow;
+  padding: 0.5rem 0;
+  width: 86.675%;
+  bottom: 0;
+  position: fixed;
+  &__img {
+    width: auto;
+    height: auto;
+  }
+}
