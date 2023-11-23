@@ -20,10 +20,10 @@ const GetStarted = () => {
             Experience sports like never before.
           </p>
           <div className="get-started__options">
-            <Link to="/bhve" className="get-started__btn-link">
+            <Link to="/login" className="get-started__btn-link">
               <p className="get-started__btn">Continue with Username</p>
             </Link>
-            <Link to="/bve" className="get-started__btn-link">
+            <Link to="/login" className="get-started__btn-link">
               <p className="get-started__btn-outline">
                 <img
                   src={googleIcon}
@@ -33,7 +33,7 @@ const GetStarted = () => {
                 Continue with Google
               </p>
             </Link>
-            <Link to="/bhe" className="get-started__btn-link">
+            <Link to="/login" className="get-started__btn-link">
               <p className="get-started__btn-outline">
                 <img
                   src={appleIcon}

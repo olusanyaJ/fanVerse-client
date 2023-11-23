@@ -3,11 +3,16 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+// .welcome {
+//   height: 100vh;
+// }
+
 .onboarding {
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
   margin-right: 1.5rem;
+
   &__text {
     @include skip-button;
   }
@@ -15,7 +20,7 @@
     margin: 0 auto;
     margin-top: 1.5rem;
     width: 15.875rem;
-    height: 40vh;
+    height: 48vh;
     border-radius: 1.5rem 1.5rem 0 0;
     background: $button-color;
   }
@@ -27,7 +32,7 @@
   &__content {
     background-color: $bg-color;
     padding: 1rem 0;
-    height: 40vh;
+    height: 41.5vh;
   }
   &__inner {
     margin: 0 1.5rem;

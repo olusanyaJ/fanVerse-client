@@ -4,9 +4,10 @@
 @use "../../styles/partials/mixins" as *;
 
 .get-started {
+  height: 100vh;
   &__wrapper {
     max-width: 100vw;
-    height: 45vh;
+    height: 52.5vh;
     overflow: hidden;
     background-color: $get-started-bg-color;
   }
@@ -50,7 +51,7 @@
   &__content {
     background-color: $bg-color;
     padding: 1rem 0;
-    height: 45vh;
+    height: 47.5vh;
   }
   &__inner {
     margin: 0 1.5rem;
@@ -89,7 +90,7 @@
   }
   &__footer {
     text-align: center;
-    // margin-top: 2.5rem;
+    margin-top: 2rem;
   }
   &__footer-text {
     color: $secondary-color;
