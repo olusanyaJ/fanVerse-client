@@ -7,9 +7,30 @@ import photoIcon from "../../assets/icons/photo.svg";
 import gifIcon from "../../assets/icons/gif.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const CreateVerse = () => {
   const [inputValue, setInputValue] = useState("");
+  const [content, setContent] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log("working!");
+    console.log(event.target.verse.value);
+    // try {
+    //   const response = await axios.post("http://localhost:8000/posts", {
+    //     user_id : ,
+    //     user_name: ,
+    //     content: event.target.verse.value,
+    //   });
+    //   console.log("Post created with ID:", response.data.id);
+    // } catch (error) {
+    //   console.error(
+    //     "Error creating post:",
+    //     error.response?.data?.error || error.message
+    //   );
+    // }
+  };
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -17,12 +38,12 @@ const CreateVerse = () => {
   return (
     <main className="create-verse">
       <div className="create-verse__nav">
-        <Link to="/nice-to-have" className="nav__link">
+        <Link to="/home" className="nav__link">
           <img src={cancelIcon} alt="" />
         </Link>
       </div>
 
-      <form className="create-verse__form">
+      <form className="create-verse__form" onSubmit={handleSubmit}>
         <textarea
           id="verse"
           name="verse"

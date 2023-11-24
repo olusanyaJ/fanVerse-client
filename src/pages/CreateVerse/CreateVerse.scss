@@ -5,7 +5,6 @@
 
 .create-verse {
   height: 100vh;
-  //   border: 1px solid red;
   &__nav {
     padding: 0.88rem 1.5rem;
     border-bottom: 0.3px solid rgba(203, 208, 217, 0.2);
@@ -47,13 +46,14 @@
   }
   &__btn {
     float: right;
+    font-size: 1rem;
     border: none;
     width: 7.5rem;
     height: 3.5rem;
     padding: 0.5rem 1rem;
     border-radius: 0.75rem;
-    color: white;
-    background-color: #e41447;
+    color: $button-text-color;
+    background-color: $button-color;
     opacity: 0.3;
     &.active {
       opacity: 1;
