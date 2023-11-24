@@ -83,7 +83,7 @@ const HomePage = () => {
     <main className="main">
       <Header />
       <div className="main__container">
-        <Verse />
+        <Verse userData={data} posts={posts} />
         {/* <div className="post_test">
           <div>
             This is the home feed of {data.username} and i am a {sportsType} Fan
