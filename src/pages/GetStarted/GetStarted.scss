@@ -20,32 +20,32 @@
   &__box2,
   &__box3 {
     position: absolute;
-    width: 21.72613rem;
+    width: 20rem;
     height: 25.75rem;
     transform: rotate(-6deg);
     flex-shrink: 0;
     border-radius: 1.25rem;
   }
   &__box1 {
-    top: 4rem;
-    left: 4rem;
+    top: 1.75rem;
+    left: 3.75rem;
     opacity: 0.3;
-    background: $button-text-color;
+    // background: $button-text-color;
     backdrop-filter: blur(2px);
   }
 
   &__box2 {
-    top: 3rem;
-    left: 5rem;
+    top: 1.25rem;
+    left: 4.25rem;
     opacity: 0.6;
-    background: $button-text-color;
+    // background: $button-text-color;
     backdrop-filter: blur(2px);
   }
 
   &__box3 {
-    top: 2rem;
-    left: 6rem;
-    background: $button-color;
+    top: 0.75rem;
+    left: 4.75rem;
+    // background: $button-color;
     box-shadow: -8px 16px 50px 0px rgba(15, 23, 42, 0.04);
   }
   &__content {

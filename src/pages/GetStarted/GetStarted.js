@@ -2,15 +2,21 @@ import { Link } from "react-router-dom";
 import "./GetStarted.scss";
 import googleIcon from "../../assets/icons/Google.svg";
 import appleIcon from "../../assets/icons/Apple.svg";
+import one from "../../assets/images/33. Home - V3.svg";
+import two from "../../assets/images/33. Home - V3 (1).svg";
+import three from "../../assets/images/Select your sport - Toggle on.svg";
 
 const GetStarted = () => {
   return (
     <div className="get-started">
       <div className="get-started__wrapper">
         <div className="get-started__boxes">
-          <div className="get-started__box1"></div>
+          {/* <div className="get-started__box1"></div>
           <div className="get-started__box2"></div>
-          <div className="get-started__box3"></div>
+          <div className="get-started__box3"></div> */}
+          <img src={one} alt="" className="get-started__box1" />
+          <img src={two} alt="" className="get-started__box2" />
+          <img src={three} alt="" className="get-started__box3" />
         </div>
       </div>
       <div className="get-started__content">
