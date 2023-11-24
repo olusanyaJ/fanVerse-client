@@ -3,14 +3,15 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-// .welcome {
-//   height: 100vh;
-// }
+.welcome {
+  height: 100vh;
+  background: #263143;
+}
 
 .onboarding {
   display: flex;
   justify-content: flex-end;
-  margin-top: 1rem;
+  padding-top: 1rem;
   margin-right: 1.5rem;
 
   &__text {
@@ -19,10 +20,9 @@
   &__wrapper {
     margin: 0 auto;
     margin-top: 1.5rem;
-    width: 15.875rem;
-    height: 48vh;
+    width: 100%;
+    height: 47.25vh;
     border-radius: 1.5rem 1.5rem 0 0;
-    background: $button-color;
   }
 
   &__image {
@@ -32,7 +32,9 @@
   &__content {
     background-color: $bg-color;
     padding: 1rem 0;
-    height: 41.5vh;
+    height: 42.25vh;
+    margin-top: -5px;
+    // border-top: 10px solid red;
   }
   &__inner {
     margin: 0 1.5rem;
