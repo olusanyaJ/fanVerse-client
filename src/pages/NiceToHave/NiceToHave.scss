@@ -1,0 +1,15 @@
+.nice {
+  padding: 0 1.5rem;
+  padding-top: 3.8225rem;
+  text-align: center;
+  &__title {
+    padding: 2rem 0;
+  }
+  &__desc {
+    padding-bottom: 2.5rem;
+  }
+  &__img {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+}

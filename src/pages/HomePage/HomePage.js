@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Nav from "../../components/Nav/Nav";
 import Verse from "../../components/Verse/Verse";
+import NiceToHave from "../NiceToHave/NiceToHave";
 
 const HomePage = () => {
   const navigate = useNavigate();
