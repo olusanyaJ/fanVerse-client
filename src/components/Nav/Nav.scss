@@ -1,11 +1,16 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
 .footer {
   //   border: 1px solid yellow;
-  padding: 0.5rem 0;
-  width: 86.675%;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
   bottom: 0;
   position: fixed;
-  //   background-color: lightblue;
-
+  background-color: $bg-color;
+  border-top: 0.3px solid rgba(203, 208, 217, 0.2);
   &__img {
     width: auto;
     height: auto;
