@@ -2,8 +2,16 @@ import Header from "../../components/Header/Header";
 import Nav from "../../components/Nav/Nav";
 import "./NiceToHave.scss";
 import imgNice from "../../assets/images/wink.avif";
+import { useNavigate } from "react-router-dom";
 
 const NiceToHave = () => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    sessionStorage.removeItem("token");
+    navigate("/login");
+  };
+
   return (
     <div className="main">
       <Header />
@@ -15,6 +23,10 @@ const NiceToHave = () => {
           soon!
         </p>
         <img src={imgNice} alt="img" className="nice__img" />
+
+        <button onClick={logout} className="log-out">
+          Log Out
+        </button>
       </section>
       <Nav />
     </div>

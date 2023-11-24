@@ -4,14 +4,11 @@
 @use "../../styles/partials/mixins" as *;
 
 .verse {
-  // border: 1px solid red;
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid grey;
-  &__container {
-    // border: 1px solid yellowgreen;
-  }
+  border-bottom: 0.3px solid rgba(203, 208, 217, 0.2);
+  // &__container {
+  // }
   &__details {
-    // border: 1px solid burlywood;
     display: flex;
   }
   &__img {
@@ -22,7 +19,6 @@
     background: lightgray 50% / cover no-repeat;
   }
   &__outer {
-    // border: 1px solid yellow;
     display: flex;
     align-items: center;
     width: 100%;
@@ -30,9 +26,7 @@
   }
   &__inner {
     display: flex;
-    // border: 1px solid cyan;
     align-items: center;
-    // justify-content: space-around;
     width: 8.875rem;
   }
   &__full-name {
@@ -45,7 +39,6 @@
     margin-right: 1rem;
   }
   &__username {
-    // color: $secondary-color;
     color: $button-text-color;
     font-size: 1rem;
     font-style: normal;
@@ -61,12 +54,10 @@
     line-height: normal;
     letter-spacing: -0.01875rem;
   }
-  &__live {
-    // align-items: center;
-  }
+  // &__live {
+  // }
   &__content {
     margin: 0.5rem 0;
-    // border: 1px solid green;
   }
   &__topic {
     margin-bottom: 0.25rem;
@@ -83,6 +74,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    &--img {
+      margin: 0.5rem 0;
+      width: 100%;
+      border-radius: 10px;
+    }
   }
   &__discuss {
     margin-bottom: 0.5rem;
@@ -93,7 +89,6 @@
     line-height: normal;
   }
   &__specs {
-    // border: 1px solid whitesmoke;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -112,8 +107,7 @@
     height: 1.25rem;
     margin-right: 0.12rem;
     &--value {
-      color: #64748b;
-      font-family: Manrope;
+      color: $secondary-color;
       font-size: 0.75rem;
       font-style: normal;
       font-weight: 400;

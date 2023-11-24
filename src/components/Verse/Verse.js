@@ -8,6 +8,7 @@ import live from "../../assets/icons/liveVerse.svg";
 import { Link } from "react-router-dom";
 
 const Verse = ({ userData, posts }) => {
+  console.log(userData);
   return (
     <div>
       {posts
@@ -46,10 +47,14 @@ const Verse = ({ userData, posts }) => {
             <div className="verse">
               <div className="verse__container">
                 <div className="verse__details">
-                  <img src={img} alt="" className="verse__img" />
+                  <img
+                    src={post.profile_image_url}
+                    alt=""
+                    className="verse__img"
+                  />
                   <div className="verse__outer">
                     <div className="verse__inner">
-                      {/* <p className="verse__full-name">Full Name</p> */}
+                      {/* <p className="verse__full-name">{post.full_name}</p> */}
                       <p className="verse__username">@{post.user_name}</p>
                     </div>
                     <p className="verse__time">
@@ -62,7 +67,18 @@ const Verse = ({ userData, posts }) => {
                   {/* <p className="verse__topic">
                     What is your favourite match of 2023 so far?
                   </p> */}
-                  <p className="verse__desc">{post.content}</p>
+                  {/* <p className="verse__desc">{post.content}</p> */}
+                  {/* this dangerouslySetInnerHTM allows me render an emoji from the
+                  db */}
+                  <p
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                    className="verse__desc"
+                  ></p>
+                  <img
+                    src={post.content_img}
+                    alt=""
+                    className="verse__desc--img"
+                  />
                 </div>
                 <p className="verse__discuss">Join the discussion!</p>
                 <div className="verse__specs">
@@ -74,13 +90,13 @@ const Verse = ({ userData, posts }) => {
                   </Link>
 
                   <Link to="/nice-to-have" className="verse__comments">
-                    <img src={comments} alt="" className="verse__icon" />
+                    <img src={reVerses} alt="" className="verse__icon" />
                     <span className="verse__icon--value">
                       {post.comments_count}K
                     </span>
                   </Link>
                   <Link to="/nice-to-have" className="verse__rv">
-                    <img src={reVerses} alt="" className="verse__icon" />
+                    <img src={comments} alt="" className="verse__icon" />
                     <span className="verse__icon--value">
                       {post.replies_count}K
                     </span>

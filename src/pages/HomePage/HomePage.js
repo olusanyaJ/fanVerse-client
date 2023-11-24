@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Nav from "../../components/Nav/Nav";
 import Verse from "../../components/Verse/Verse";
-import NiceToHave from "../NiceToHave/NiceToHave";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -13,6 +12,7 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
   const [sportsType, setsportsType] = useState("");
+  const [userLoggedImg, setUserLoggedImg] = useState("");
   const [posts, setPosts] = useState([]);
 
   const fetchData = async () => {
@@ -54,6 +54,8 @@ const HomePage = () => {
 
   useEffect(() => {
     if (data) {
+      let userImg = data.profile_image_url;
+      // console.log(data.profile_image_url);
       let usersportsType = "";
       if (data.football) {
         usersportsType = "football";
@@ -64,12 +66,18 @@ const HomePage = () => {
       }
 
       setsportsType(usersportsType);
+      setUserLoggedImg(userImg);
       fetchData();
     }
   }, [data, sportsType]);
 
   if (failedAuth) {
-    return <main className="dashboard">You must log in to see this page.</main>;
+    return (
+      <main className="dashboard">
+        <h1>You must log in to see this page.</h1>
+        {logout()}
+      </main>
+    );
   }
 
   if (isLoading) {
@@ -82,7 +90,7 @@ const HomePage = () => {
 
   return (
     <main className="main">
-      <Header />
+      <Header userData={userLoggedImg} />
       <div className="main__container">
         <Verse userData={data} posts={posts} />
         {/* <div className="post_test">

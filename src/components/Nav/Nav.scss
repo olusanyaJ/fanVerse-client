@@ -9,7 +9,8 @@
   width: 100%;
   bottom: 0;
   position: fixed;
-  border-top: 1px solid grey;
+  background-color: $bg-color;
+  border-top: 0.3px solid rgba(203, 208, 217, 0.2);
   &__img {
     width: auto;
     height: auto;

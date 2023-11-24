@@ -1,9 +1,15 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
 .header {
   // border: 1px solid red;
   padding: 0.88rem 1.5rem;
   width: 100%;
   position: fixed;
-  border-bottom: 1px solid grey;
+  border-bottom: 0.3px solid rgba(203, 208, 217, 0.2);
+  background-color: $bg-color;
   // padding: 0 1.5rem;
   //   background-color: lightblue;
 }
