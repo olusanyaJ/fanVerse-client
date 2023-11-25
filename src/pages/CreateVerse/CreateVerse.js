@@ -9,7 +9,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
+import auth from "../../utils/auth";
+
 const CreateVerse = () => {
+  const { failedAuth, isLoading, userData } = auth();
   const [inputValue, setInputValue] = useState("");
   const [content, setContent] = useState("");
 
@@ -17,6 +20,7 @@ const CreateVerse = () => {
     event.preventDefault();
     console.log("working!");
     console.log(event.target.verse.value);
+    console.log(userData);
     // try {
     //   const response = await axios.post("http://localhost:8000/posts", {
     //     user_id : ,
@@ -32,9 +36,30 @@ const CreateVerse = () => {
     // }
   };
 
+  //   useEffect(() => {
+  //     if (userData) {
+  //       //   fetchData();
+  //     }
+  //   }, [userData]);
+
+  //   const navigate = useNavigate();
+
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
+
+  if (failedAuth) {
+    return (
+      <main className="dashboard">
+        <h1>You must log in to see this page.</h1>
+      </main>
+    );
+  }
+
+  if (isLoading) {
+    return <main className="dashboard">Loading...</main>;
+  }
+
   return (
     <main className="create-verse">
       <div className="create-verse__nav">
