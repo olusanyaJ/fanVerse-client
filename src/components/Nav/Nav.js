@@ -22,7 +22,7 @@ const Nav = () => {
             </Link>
           </li>
           <li className="nav__item">
-            <Link to="/nice-to-have" className="nav__link">
+            <Link to="/verse" className="nav__link">
               <img src={createVerseIcon} alt="" className="footer__img" />
             </Link>
           </li>

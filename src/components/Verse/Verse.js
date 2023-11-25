@@ -1,5 +1,4 @@
 import "./Verse.scss";
-import img from "../../assets/images/free-photo.jpeg";
 import likes from "../../assets/icons/likes.svg";
 import comments from "../../assets/icons/comments.svg";
 import reVerses from "../../assets/icons/rts.svg";
@@ -103,7 +102,7 @@ const Verse = ({ userData, posts }) => {
                   </Link>
                   <Link to="/nice-to-have" className="verse__shares">
                     <img src={share} alt="" className="verse__icon" />
-                    <span className="verse__icon--value">{post.id}K</span>
+                    {/* <span className="verse__icon--value">{post.id}K</span> */}
                   </Link>
                 </div>
               </div>
