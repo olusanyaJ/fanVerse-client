@@ -4,7 +4,6 @@ import logo from "../../assets/logo/Group 3864.svg";
 import messageIcon from "../../assets/icons/Frame.svg";
 
 const Header = ({ userData }) => {
-  console.log(userData);
   return (
     <header className="header">
       <nav className="nav">

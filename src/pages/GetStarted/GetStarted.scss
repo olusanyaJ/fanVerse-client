@@ -30,7 +30,6 @@
     top: 1.75rem;
     left: 3.75rem;
     opacity: 0.3;
-    // background: $button-text-color;
     backdrop-filter: blur(2px);
   }
 
@@ -38,14 +37,12 @@
     top: 1.25rem;
     left: 4.25rem;
     opacity: 0.6;
-    // background: $button-text-color;
     backdrop-filter: blur(2px);
   }
 
   &__box3 {
     top: 0.75rem;
     left: 4.75rem;
-    // background: $button-color;
     box-shadow: -8px 16px 50px 0px rgba(15, 23, 42, 0.04);
   }
   &__content {
@@ -55,7 +52,6 @@
   }
   &__inner {
     margin: 0 1.5rem;
-    // padding: 0.75rem 0;
   }
   &__title {
     text-align: center;

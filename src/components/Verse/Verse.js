@@ -7,7 +7,6 @@ import live from "../../assets/icons/liveVerse.svg";
 import { Link } from "react-router-dom";
 
 const Verse = ({ userData, posts }) => {
-  console.log(userData);
   return (
     <div>
       {posts
@@ -43,7 +42,7 @@ const Verse = ({ userData, posts }) => {
           };
 
           return (
-            <div className="verse">
+            <div className="verse" key={post.id}>
               <div className="verse__container">
                 <div className="verse__details">
                   <img
