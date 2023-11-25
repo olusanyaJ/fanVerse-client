@@ -5,7 +5,7 @@ import editIcon from "../../assets/icons/edit.svg";
 import Nav from "../../components/Nav/Nav";
 import auth from "../../utils/auth";
 import { useEffect, useState } from "react";
-import Verse from "../../components/Verse/Verse";
+import ProfilePost from "../../components/ProfilePost/ProfilePost";
 import axios from "axios";
 // import NiceToHave from "../NiceToHave/NiceToHave";
 
@@ -37,10 +37,9 @@ const ProfilePage = () => {
       const { data } = await axios.get(
         `http://localhost:8000/posts/users/${user_id}`
       );
-      //   console.log(data);
       setPosts(data);
     } catch (error) {
-      //   console.error("Error fetching data:", error);
+      console.error("Error fetching data:", error);
     }
   };
 
@@ -125,7 +124,8 @@ const ProfilePage = () => {
             : "profile__toggle-content-off"
         }
       >
-        <Verse userData={userData} posts={posts} />
+        <ProfilePost userData={userData} posts={posts} />
+        {/* <Verse userData={userData} posts={posts} /> */}
       </div>
       <div
         className={

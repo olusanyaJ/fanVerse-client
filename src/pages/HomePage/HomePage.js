@@ -72,7 +72,6 @@ const HomePage = () => {
       <Header userData={userLoggedImg} />
       <div className="main__container">
         <Verse userData={userData} posts={posts} />
-        <Verse userData={userData} posts={posts} />
       </div>
       <Nav />
     </main>
