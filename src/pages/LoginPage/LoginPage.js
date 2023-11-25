@@ -12,6 +12,8 @@ const LoginPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    // console.log(event.target.username.value);
+    // console.log(event.target.password.value);
     try {
       const inputData = await axios.post(
         "http://localhost:8000/user-auth/login",

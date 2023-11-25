@@ -30,7 +30,7 @@ const CreateVerse = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/posts", {
+      await axios.post("http://localhost:8000/posts", {
         data: {
           user_id: userData.id,
           user_name: userData.username,
@@ -39,8 +39,6 @@ const CreateVerse = () => {
         },
       });
       navigate("/home");
-      console.log(response);
-      console.log("Post created with ID:", response.data.id);
     } catch (error) {
       console.error("Error creating post:", error);
       console.error(
