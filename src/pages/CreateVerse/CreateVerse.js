@@ -5,7 +5,7 @@ import videoIcon from "../../assets/icons/video.svg";
 import letterIcon from "../../assets/icons/letter.svg";
 import photoIcon from "../../assets/icons/photo.svg";
 import gifIcon from "../../assets/icons/gif.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
@@ -13,36 +13,42 @@ import auth from "../../utils/auth";
 
 const CreateVerse = () => {
   const { failedAuth, isLoading, userData } = auth();
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
-  const [content, setContent] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("working!");
-    console.log(event.target.verse.value);
-    console.log(userData);
-    // try {
-    //   const response = await axios.post("http://localhost:8000/posts", {
-    //     user_id : ,
-    //     user_name: ,
-    //     content: event.target.verse.value,
-    //   });
-    //   console.log("Post created with ID:", response.data.id);
-    // } catch (error) {
-    //   console.error(
-    //     "Error creating post:",
-    //     error.response?.data?.error || error.message
-    //   );
-    // }
+
+    let userSportsType = "";
+
+    if (userData.football) {
+      userSportsType = "football";
+    }
+
+    if (userData.tennis) {
+      userSportsType = "tennis";
+    }
+
+    try {
+      const response = await axios.post("http://localhost:8000/posts", {
+        data: {
+          user_id: userData.id,
+          user_name: userData.username,
+          content: event.target.verse.value,
+          sports_type: userSportsType,
+        },
+      });
+      navigate("/home");
+      console.log(response);
+      console.log("Post created with ID:", response.data.id);
+    } catch (error) {
+      console.error("Error creating post:", error);
+      console.error(
+        "Detailed error response:",
+        error.response?.data || error.message
+      );
+    }
   };
-
-  //   useEffect(() => {
-  //     if (userData) {
-  //       //   fetchData();
-  //     }
-  //   }, [userData]);
-
-  //   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -89,7 +95,7 @@ const CreateVerse = () => {
           <img src={linkIcon} alt="link upload icon" />
         </Link>
         <Link to="/nice-to-have" className="nav__link">
-          <img src={photoIcon} alt="photo upload icon" />
+          <img src={photoIcon} alt="upload icon" />
         </Link>
         <Link to="/nice-to-have" className="nav__link">
           <img src={gifIcon} alt="gif upload icon" />
