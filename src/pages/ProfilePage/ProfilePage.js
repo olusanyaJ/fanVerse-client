@@ -7,7 +7,6 @@ import auth from "../../utils/auth";
 import { useEffect, useState } from "react";
 import ProfilePost from "../../components/ProfilePost/ProfilePost";
 import axios from "axios";
-// import NiceToHave from "../NiceToHave/NiceToHave";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
