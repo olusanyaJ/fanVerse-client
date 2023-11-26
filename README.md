@@ -1,6 +1,6 @@
 # FanVerse
 
-![Screenshot 2023-11-26 at 08 44 24](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/fbb558ac-b461-44f5-b820-52672d30c81d) ![Screenshot 2023-11-26 at 08 43 53](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/8e5ad672-98de-4df2-80d7-8ba2095b5afb) 
+![Screenshot 2023-11-26 at 08 43 53](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/8e5ad672-98de-4df2-80d7-8ba2095b5afb) ![Screenshot 2023-11-26 at 08 44 24](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/fbb558ac-b461-44f5-b820-52672d30c81d)
 
 ![Screenshot 2023-11-26 at 08 44 54](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/584269aa-de2b-4940-87de-d5b742902a16) ![Screenshot 2023-11-26 at 08 45 31](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/2e069a83-18ad-4b57-852c-ac598e22462d) 
 
