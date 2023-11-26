@@ -2,6 +2,13 @@
 
 ![Screenshot 2023-11-26 at 08 43 53](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/8e5ad672-98de-4df2-80d7-8ba2095b5afb)
 
+![Screenshot 2023-11-26 at 08 44 54](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/584269aa-de2b-4940-87de-d5b742902a16)
+
+![Screenshot 2023-11-26 at 08 45 31](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/2e069a83-18ad-4b57-852c-ac598e22462d)
+
+![Screenshot 2023-11-26 at 08 46 12](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/9c852bdd-4a0b-40aa-86c0-130c2d1fc16a)
+
+![Screenshot 2023-11-26 at 08 47 40](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/8466ee74-a204-4e5b-85cd-0a96da1d6b51)
 
 ## Overview
 
