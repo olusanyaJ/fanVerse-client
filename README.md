@@ -10,10 +10,14 @@ Enthusiasts often struggle to find a dedicated and interactive space to connect 
 
 "FanVerse" fills this gap by offering a specialized platform tailored for football and tennis, allowing fans to engage in real-time discussions, get live updates, and create a sense of community around their favorite sports.
 
-### User Profile
+### Tech Stack
 
-Football and tennis enthusiasts ranging from casual fans to avid followers of these sports. Users will create personalized profiles, join or create fan clubs dedicated to specific teams or players, engage in live match discussions, and receive real-time updates on scores, highlights, and game statistics.
+### Features
 
-#### Special Considerations:
+### Installation
 
-Ensure a user-friendly interface for easy navigation and provide seamless real-time updates during matches.
+### API references
+
+### Screenshots
+
+### Next Steps
