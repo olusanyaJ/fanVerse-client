@@ -51,7 +51,47 @@ Backend:
 - run migratin and seed
 - npm start
 
-### Screenshots
+### API Reference
+
+Users:
+
+GET api/users
+  - Retrieves the list of all users from the Db
+
+GET api/users/:id
+  - Retrieves a specific user from the users table
+    
+DEL api/users/:id
+  - Deletes a specific user from the users table
+
+POST /user-auth/login
+  - Implements user login
+
+POST /user-auth/register
+  - Creates a new user on signup
+
+GET /profile
+  - Gets the profile of a logged in user
+
+Posts:
+
+GET /posts
+  - Retrieves the list of all posts from the Db
+    
+GET /posts?sports_type="sportyType"
+  - Retrieves the list of all posts according to "sportyType" from the Db
+
+GET /posts/user/:user_id
+  - Retrieves all the posts of a specific user_id from the post table
+
+GET /posts/:id
+  - Retrieves a specific post from the post table
+
+POST /posts/
+  - Creates a new post
+
+DEL /posts/:id
+  - Deletes a specific post from the post table
 
 ### Next Steps
 
