@@ -2,7 +2,7 @@
 
 ![Screenshot 2023-11-26 at 08 43 53](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/8e5ad672-98de-4df2-80d7-8ba2095b5afb) ![Screenshot 2023-11-26 at 08 44 24](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/fbb558ac-b461-44f5-b820-52672d30c81d)
 
-![Screenshot 2023-11-26 at 08 44 54](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/584269aa-de2b-4940-87de-d5b742902a16) ![Screenshot 2023-11-26 at 08 45 31](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/2e069a83-18ad-4b57-852c-ac598e22462d) 
+![Screenshot 2023-11-26 at 08 44 54](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/584269aa-de2b-4940-87de-d5b742902a16) ![Screenshot 2023-11-26 at 08 45 31](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/2e069a83-18ad-4b57-852c-ac598e22462d)
 
 ![Screenshot 2023-11-26 at 08 46 12](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/9c852bdd-4a0b-40aa-86c0-130c2d1fc16a) ![Screenshot 2023-11-26 at 08 47 40](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/8466ee74-a204-4e5b-85cd-0a96da1d6b51)
 
@@ -62,42 +62,54 @@ Backend:
 Users:
 
 GET api/users
-  - Retrieves the list of all users from the Db
+
+- Retrieves the list of all users from the Db
 
 GET api/users/:id
-  - Retrieves a specific user from the users table
-    
+
+- Retrieves a specific user from the users table
+
 DEL api/users/:id
-  - Deletes a specific user from the users table
+
+- Deletes a specific user from the users table
 
 POST /user-auth/login
-  - Implements user login
+
+- Implements user login
 
 POST /user-auth/register
-  - Creates a new user on signup
+
+- Creates a new user on signup
 
 GET /profile
-  - Gets the profile of a logged in user
+
+- Gets the profile of a logged in user
 
 Posts:
 
 GET /posts
-  - Retrieves the list of all posts from the Db
-    
+
+- Retrieves the list of all posts from the Db
+
 GET /posts?sports_type="sportyType"
-  - Retrieves the list of all posts according to "sportyType" from the Db
+
+- Retrieves the list of all posts according to "sportyType" from the Db
 
 GET /posts/user/:user_id
-  - Retrieves all the posts of a specific user_id from the post table
+
+- Retrieves all the posts of a specific user_id from the post table
 
 GET /posts/:id
-  - Retrieves a specific post from the post table
+
+- Retrieves a specific post from the post table
 
 POST /posts/
-  - Creates a new post
+
+- Creates a new post
 
 DEL /posts/:id
-  - Deletes a specific post from the post table
+
+- Deletes a specific post from the post table
 
 ### Next Steps
 
