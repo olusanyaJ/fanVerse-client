@@ -27,4 +27,12 @@
     font-family: Manrope;
     color: $secondary-color;
   }
+  &__invalid {
+    border: 0.3px solid $button-color;
+  }
+  &__error-message {
+    color: $button-color;
+    font-size: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
 }
