@@ -27,11 +27,11 @@
   &__avatar {
     border-radius: 0.3125rem;
     border: 1px solid #ced5dc;
-    width: 100%;
+    width: 35%;
+    // height: 35vh;
     height: 6.1875rem;
     margin-bottom: 1rem;
     border-radius: 0.3125rem;
-    background: lightgray 0px -137.11px / 100% 330.303% no-repeat;
   }
   &__cred {
     display: flex;
@@ -39,7 +39,7 @@
   }
   &__name,
   &__following {
-    width: 33.75%;
+    width: 42.5%;
   }
   &__name,
   &__username,
