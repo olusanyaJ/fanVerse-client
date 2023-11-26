@@ -1,5 +1,8 @@
 # FanVerse
 
+![Screenshot 2023-11-26 at 08 43 53](https://github.com/olusanyaJ/fanVerse-client/assets/145439880/8e5ad672-98de-4df2-80d7-8ba2095b5afb)
+
+
 ## Overview
 
 "FanVerse" is a dynamic sports social network tailored for football and lawn tennis enthusiasts. It's a hub where fans unite to discuss, share, and celebrate their favorite sports. With personalized profiles, engaging fan clubs, live match updates, and interactive group discussions, FanVerse creates a vibrant space for fans to connect, stay updated, and engage in the exciting world of football and tennis.
