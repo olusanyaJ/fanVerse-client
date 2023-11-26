@@ -8,9 +8,12 @@ import deleteIcon from "../../assets/icons/x.svg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import DeleteModal from "../DeleteModal/DeleteModal";
 
 const ProfilePost = ({ userData, posts }) => {
   const [allUserPosts, setAllUserPosts] = useState(posts);
+  const [selectedPost, setSelectedPost] = useState(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   useEffect(() => {
     if (posts && posts.length > 0) {
@@ -25,12 +28,23 @@ const ProfilePost = ({ userData, posts }) => {
       setAllUserPosts((prevPosts) =>
         prevPosts.filter((post) => post.id !== postId)
       );
+      closeDeleteModal();
     } catch (error) {
       console.error(
         "Error deleting post:",
         error.response?.data?.error || error.message
       );
     }
+  };
+
+  const openDeleteModal = (postId) => {
+    setSelectedPost(postId);
+    setIsDeleteModalOpen(true);
+  };
+
+  const closeDeleteModal = () => {
+    setSelectedPost(null);
+    setIsDeleteModalOpen(false);
   };
 
   return (
@@ -132,12 +146,17 @@ const ProfilePost = ({ userData, posts }) => {
                   <Link
                     to=""
                     className="verse__shares"
-                    onClick={() => handleDelete(post.id)}
+                    onClick={() => openDeleteModal(post.id)}
                   >
                     <img src={deleteIcon} alt="" className="verse__icon" />
                   </Link>
                 </div>
               </div>
+              <DeleteModal
+                isOpen={isDeleteModalOpen}
+                onClose={closeDeleteModal}
+                onDelete={() => handleDelete(selectedPost)}
+              />
             </div>
           );
         })}
