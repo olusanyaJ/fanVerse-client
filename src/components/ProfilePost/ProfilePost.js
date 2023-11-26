@@ -10,20 +10,41 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
-const ProfilePost = ({ userData, posts }) => {
+const ProfilePost = ({ posts }) => {
   const [allUserPosts, setAllUserPosts] = useState(posts);
   const [selectedPost, setSelectedPost] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [likesCount, setLikesCount] = useState({});
 
   useEffect(() => {
     if (posts && posts.length > 0) {
       setAllUserPosts(posts);
+
+      // Load likes counts from local storage or initialize to default values
+      const storedLikesCounts =
+        JSON.parse(localStorage.getItem("likesCount")) || {};
+      setLikesCount((prevLikes) => {
+        const updatedLikes = {};
+        posts.forEach((post) => {
+          updatedLikes[post.id] =
+            storedLikesCounts[post.id] || post.likes_count;
+        });
+        return { ...prevLikes, ...updatedLikes };
+      });
     }
   }, [posts]);
 
+  useEffect(() => {
+    /*
+     * Save likes counts to local storage whenever it changes
+     * Uses localStorage to store and retrieve the likesCounts state, ensuring that the likes counts persist across page refreshes.
+     */
+    localStorage.setItem("likesCount", JSON.stringify(likesCount));
+  }, [likesCount]);
+
   const handleDelete = async (postId) => {
     try {
-      const resp = await axios.delete(`http://localhost:8000/posts/${postId}`);
+      await axios.delete(`http://localhost:8000/posts/${postId}`);
 
       setAllUserPosts((prevPosts) =>
         prevPosts.filter((post) => post.id !== postId)
@@ -46,6 +67,17 @@ const ProfilePost = ({ userData, posts }) => {
     setSelectedPost(null);
     setIsDeleteModalOpen(false);
   };
+
+  const handleLikes = (postId) => {
+    setLikesCount((prevLikes) => ({
+      ...prevLikes,
+      [postId]: (prevLikes[postId] || 0) + 1,
+    }));
+  };
+
+  if (!posts) {
+    return <>Loading!!!</>;
+  }
 
   return (
     <div>
@@ -120,10 +152,14 @@ const ProfilePost = ({ userData, posts }) => {
                 </div>
                 <p className="verse__discuss">Join the discussion!</p>
                 <div className="profile-post__specs">
-                  <Link to="/nice-to-have" className="verse__likes">
+                  <Link
+                    to=""
+                    className="verse__likes"
+                    onClick={() => handleLikes(post.id)}
+                  >
                     <img src={likes} alt="" className="verse__icon" />
                     <span className="verse__icon--value">
-                      {post.likes_count}K
+                      {likesCount[post.id]}K
                     </span>
                   </Link>
 
