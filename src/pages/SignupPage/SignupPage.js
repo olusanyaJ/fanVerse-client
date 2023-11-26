@@ -7,7 +7,8 @@ import axios from "axios";
 import { useState } from "react";
 
 const SignupPage = () => {
-  // const [error, setError] = useState(null);
+  const [formData, setFormData] = useState({});
+  const [formErrors, setFormErrors] = useState(null);
   const navigate = useNavigate();
 
   const [tennisChecked, setTennisChecked] = useState(false);
@@ -21,8 +22,41 @@ const SignupPage = () => {
     setFootballChecked(!footballChecked);
   };
 
+  const changeHandler = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    let isFormValid = true;
+
+    const errors = {};
+
+    if (!event.target.username.value) {
+      isFormValid = false;
+      errors["username"] = "You must enter your username";
+    }
+    if (!event.target.email.value) {
+      isFormValid = false;
+      errors["email"] = "You must enter a valid Email";
+    }
+    if (!event.target.password.value) {
+      isFormValid = false;
+      errors["password"] = "You must enter a secure Password";
+    }
+
+    if (!tennisChecked && !footballChecked) {
+      isFormValid = false;
+      errors["sport"] = "You must Choose a Sport";
+    }
+
+    if (!isFormValid) {
+      return setFormErrors(errors);
+    }
 
     try {
       await axios.post("http://localhost:8000/user-auth/signup", {
@@ -36,7 +70,7 @@ const SignupPage = () => {
       navigate("/login");
     } catch (error) {
       console.error(error);
-      // setError(error.response);
+      setFormErrors(error.response);
     }
   };
 
@@ -47,9 +81,32 @@ const SignupPage = () => {
         Let’s get you up and running with your very own FanVerse account.
       </p>
       <form className="signup" onSubmit={handleSubmit}>
-        <Input type="text" name="username" label="Username" />
-        <Input type="text" name="email" label="Email" id="email" required />
-        <Input type="password" name="password" label="Password" />
+        <Input
+          type="text"
+          name="username"
+          label="Username"
+          value={formData.username ?? ""}
+          onChange={(e) => changeHandler(e)}
+          error={formErrors?.username}
+        />
+        <Input
+          type="text"
+          name="email"
+          label="Email"
+          id="email"
+          required
+          value={formData.email ?? ""}
+          onChange={(e) => changeHandler(e)}
+          error={formErrors?.email}
+        />
+        <Input
+          type="password"
+          name="password"
+          label="Password"
+          value={formData.password ?? ""}
+          onChange={(e) => changeHandler(e)}
+          error={formErrors?.password}
+        />
 
         <label>
           <p className="signup-page__choice">
@@ -83,8 +140,6 @@ const SignupPage = () => {
             </div>
           </div>
         </label>
-
-        {/* {error && <div className="signup__message">{error}</div>} */}
 
         <button className="signup-page__btn-signup">Sign Up</button>
       </form>
