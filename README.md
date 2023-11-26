@@ -22,7 +22,9 @@ Backend:
 - Node.js, Express.js, Knex.js.
 - Database (SQl).
 
-### Users
+### Features
+
+Users
 
 - Users can sign up and choose prefered sport, log in, and create personalized profiles.
 - Users homefeed would have posts of different users with same choice of sport.
