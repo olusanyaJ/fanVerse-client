@@ -5,8 +5,42 @@ import reVerses from "../../assets/icons/rts.svg";
 import share from "../../assets/icons/share.svg";
 import live from "../../assets/icons/liveVerse.svg";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Verse = ({ userData, posts }) => {
+  const [likesCount, setLikesCount] = useState({});
+
+  useEffect(() => {
+    if (posts && posts.length > 0) {
+      // Load likes counts from local storage or initialize to default values
+      const storedLikesCounts =
+        JSON.parse(localStorage.getItem("likesCount")) || {};
+      setLikesCount((prevLikes) => {
+        const updatedLikes = {};
+        posts.forEach((post) => {
+          updatedLikes[post.id] =
+            storedLikesCounts[post.id] || post.likes_count;
+        });
+        return { ...prevLikes, ...updatedLikes };
+      });
+    }
+  }, [posts]);
+
+  useEffect(() => {
+    /*
+     * Save likes counts to local storage whenever it changes
+     * Uses localStorage to store and retrieve the likesCounts state, ensuring that the likes counts persist across page refreshes.
+     */
+    localStorage.setItem("likesCount", JSON.stringify(likesCount));
+  }, [likesCount]);
+
+  const handleLikes = (postId) => {
+    setLikesCount((prevLikes) => ({
+      ...prevLikes,
+      [postId]: (prevLikes[postId] || 0) + 1,
+    }));
+  };
+
   return (
     <div>
       {posts
@@ -80,10 +114,14 @@ const Verse = ({ userData, posts }) => {
                 </div>
                 <p className="verse__discuss">Join the discussion!</p>
                 <div className="verse__specs">
-                  <Link to="/nice-to-have" className="verse__likes">
+                  <Link
+                    to=""
+                    className="verse__likes"
+                    onClick={() => handleLikes(post.id)}
+                  >
                     <img src={likes} alt="" className="verse__icon" />
                     <span className="verse__icon--value">
-                      {post.likes_count}K
+                      {likesCount[post.id]}K
                     </span>
                   </Link>
 
