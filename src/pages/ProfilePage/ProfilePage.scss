@@ -1,5 +1,4 @@
 @use "../../styles/partials/reset";
-@use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
@@ -28,7 +27,6 @@
     border-radius: 0.3125rem;
     border: 1px solid #ced5dc;
     width: 35%;
-    // height: 35vh;
     height: 6.1875rem;
     margin-bottom: 1rem;
     border-radius: 0.3125rem;

@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import googleIcon from "../../assets/icons/Google.svg";
 import appleIcon from "../../assets/icons/Apple.svg";
 import axios from "axios";
-// import { useState } from "react";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -12,8 +11,6 @@ const LoginPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // console.log(event.target.username.value);
-    // console.log(event.target.password.value);
     try {
       const inputData = await axios.post(
         "http://localhost:8000/user-auth/login",
