@@ -1,0 +1,27 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.login-page {
+  height: 100vh;
+  margin: 0 1.5rem;
+  padding-top: 2.5rem;
+  &__condition {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 5rem;
+    color: $blue-button-color;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4875rem;
+    letter-spacing: 0.01875rem;
+  }
+  &__btn-signup {
+    width: 100%;
+    border: none;
+    margin-top: 1rem;
+    @include get-started-button;
+  }
+}

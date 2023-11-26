@@ -3,21 +3,26 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+.welcome {
+  height: 100vh;
+  background: #263143;
+}
+
 .onboarding {
   display: flex;
   justify-content: flex-end;
-  margin-top: 1rem;
+  padding-top: 1rem;
   margin-right: 1.5rem;
+
   &__text {
     @include skip-button;
   }
   &__wrapper {
-    margin: 0 auto;
-    margin-top: 1.5rem;
-    width: 15.875rem;
-    height: 40vh;
-    border-radius: 1.5rem 1.5rem 0 0;
-    background: $button-color;
+    height: 49.5vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    display: block;
   }
 
   &__image {
@@ -27,7 +32,7 @@
   &__content {
     background-color: $bg-color;
     padding: 1rem 0;
-    height: 40vh;
+    height: 43vh;
   }
   &__inner {
     margin: 0 1.5rem;
