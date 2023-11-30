@@ -21,6 +21,16 @@ const ProfilePage = () => {
   };
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:8000/posts/users/${user_id}`
+        );
+        setPosts(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
     if (userData) {
       let userImg = userData.profile_image_url;
       let user_id = userData.id;
@@ -29,18 +39,7 @@ const ProfilePage = () => {
 
       fetchData();
     }
-  }, [userData]);
-
-  const fetchData = async () => {
-    try {
-      const { data } = await axios.get(
-        `http://localhost:8000/posts/users/${user_id}`
-      );
-      setPosts(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  }, [userData, user_id]);
 
   const logout = () => {
     sessionStorage.removeItem("token");
