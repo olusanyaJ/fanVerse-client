@@ -15,6 +15,16 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:8000/posts?sports_type=${sportsType}`
+        );
+        setPosts(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
     if (userData) {
       let userImg = userData.profile_image_url;
       let userSportsType = "";
@@ -32,18 +42,7 @@ const HomePage = () => {
 
       fetchData();
     }
-  }, [userData]);
-
-  const fetchData = async () => {
-    try {
-      const { data } = await axios.get(
-        `http://localhost:8000/posts?sports_type=${sportsType}`
-      );
-      setPosts(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  }, [userData, sportsType]);
 
   const logout = () => {
     sessionStorage.removeItem("token");
@@ -79,23 +78,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-{
-  /* <div className="post_test">
-          <div>
-            This is the home feed of {data.username} and i am a {sportsType} Fan
-          </div>
-          <p>This is the content:</p>
-          {posts.map((post) => {
-            const postContent = post.content;
-            return (
-              <>
-                <p key={post.id} className="post-test">
-                  {postContent}
-                </p>
-              </>
-            );
-          })}
-          <button onClick={logout}>Log Out</button>
-        </div> */
-}
